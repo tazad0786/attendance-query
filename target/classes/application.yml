@@ -1,0 +1,36 @@
+spring:
+  profiles:
+    active: local
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  r2dbc:
+    url: r2dbc:h2:mem:///attendance-db
+  data:
+    r2dbc:
+      repositories:
+        enabled: true
+  kafka:
+    properties:
+      sasl:
+        mechanism: PLAIN
+        jaas:
+          config: org.apache.kafka.common.security.plain.PlainLoginModule required username='MUJPA6XDBDVYJKKP' password='yHN71K9DjLDaKMo1+69XmwU+7gtwVlelRpmAlC0VUuVsvin4uHF8AljpXXg9VllL';
+      bootstrap.servers: pkc-921jm.us-east-2.aws.confluent.cloud:9092
+      security.protocol: SASL_SSL
+      session.timeout.ms: 45000
+    consumer:
+      bootstrap-servers: pkc-921jm.us-east-2.aws.confluent.cloud:9092
+      group-id: attendance_query_service_group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.IntegerDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+daily:
+  attendance:
+    topic: daily.attendance.events
+
+server:
+  port: 8081

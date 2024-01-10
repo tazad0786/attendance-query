@@ -1,0 +1,16 @@
+type Query {
+    allAttendances: [AttendanceInfo],
+    getAttendance(attendanceInfoId:Int): AttendanceInfo
+}
+
+type AttendanceInfo {
+    id:ID!,
+    employeeId:Int,
+    employeeName:String,
+    swipeIn: String,
+    swipeOut: String,
+    totalHours:String,
+    status:String,
+    date:String,
+    officeLocation:String
+}

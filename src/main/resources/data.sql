@@ -1,0 +1,3 @@
+--INSERT INTO attendance_info (id, employee_id, employee_name, swipe_in, swipe_out, total_hours, status, date, office_location) VALUES (1,1,'Shardul Mane', '10:00', '18:00', 8, 'PRESENT', '2023-12-27', 'Pune');
+--INSERT INTO attendance_info (id, employee_id, employee_name, swipe_in, swipe_out, total_hours, status, date, office_location) VALUES (2,2,'Shreyash Mane', '11:15', '16:30', 5.15, 'HALF_DAY', '2023-12-27', 'Mumbai');
+--INSERT INTO attendance_info (id, employee_id, employee_name, swipe_in, swipe_out, total_hours, status, date, office_location) VALUES (3,3,'Abhishek Mane', '09:45', '12:45', 3, 'ABSENT', '2023-12-27', 'Bangalore');
